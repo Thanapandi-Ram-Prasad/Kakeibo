@@ -1,0 +1,20 @@
+<div id="category-month-title">Mycash</div>
+<h2 class="category-month-msg"><%=@category_month %></h2>
+<h1 class="category-month-msg"><%= @category.name %></h1>
+
+<table border="5" width="320" cellspacing="0" id="category-month-table">
+  <tr height="50">
+    <th width="160" align="center">Date</th>
+    <th width="160" align="center">Total(¥)</th>
+  </tr>
+  <% @lists.zip(@lists_sum).each do |list, (key,val)| %>
+    <tr height="50">
+      <th align="center"><%= list.spent_date %></th>
+      <th align="center"><%= val %></th>
+    </tr>
+  <% end %>
+</table>
+
+<a href="/users"><button type="button" id="category-month-home">Home</button></a>
+
+<a href="/logout"><button type="button" id="category-month-logout">Logout</button></a>

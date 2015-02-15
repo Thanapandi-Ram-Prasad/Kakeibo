@@ -1,0 +1,58 @@
+<div id="category-year-title">Mycash</div>
+<h2 class="category-year-msg"><%=@category_year %></h2>
+<h1 class="category-year-msg"><%= @category.name %></h1>
+
+<table border="5" width="320" cellspacing="0" id="category-year-table">
+  <tr height="40">
+    <th width="160" align="center">Date</th>
+    <th width="160" align="center">Total(¥)</th>
+  </tr>
+  <tr height="40">
+    <th align="center">January</th>
+    <th align="center"><%= @sum_junuary %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">February</th>
+    <th align="center"><%= @sum_february %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">March</th>
+    <th align="center"><%= @sum_march %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">April</th>
+    <th align="center"><%= @sum_april %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">May</th>
+    <th align="center"><%= @sum_may %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">June</th>
+    <th align="center"><%= @sum_june %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">July</th>
+    <th align="center"><%= @sum_july %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">August</th>
+    <th align="center"><%= @sum_august %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">September</th>
+    <th align="center"><%= @sum_september %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">November</th>
+    <th align="center"><%= @sum_november %></th>
+  </tr>
+  <tr height="40">
+    <th align="center">December</th>
+    <th align="center"><%= @sum_december %></th>
+  </tr>
+</table>
+
+<a href="/users"><button type="button" id="category-year-home">Home</button></a>
+
+<a href="/logout"><button type="button" id="category-year-logout">Logout</button></a>

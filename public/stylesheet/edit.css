@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#edit-title {
+  position: relative;
+  top: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+#edit-frame {
+  /*border: solid 1px;*/
+  margin-top: 30px;
+}
+
+.fill {
+  font-weight: bold;
+}
+
+.fill-label {
+  /*border: solid 1px;*/
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  overflow-x: scroll;
+}
+
+#button {
+  height: 30px;
+  margin-top: 10px;
+  background-color: #00C853;
+  font-weight: bold;
+}
+
+#submit {
+  width: 72px;
+}
+
+#edit-home {
+  clear: both;
+  position: absolute;
+  top:10px;
+  right: 60px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}
+
+#edit-logout {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}

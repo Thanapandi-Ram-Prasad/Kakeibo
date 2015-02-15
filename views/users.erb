@@ -1,0 +1,55 @@
+<div id="users-title">Mycash</div>
+<h1 id="users-msg">Welcome <%= @user.user_name %>!</h2>
+
+<div id="users-frame">
+
+<div>
+  <a href="/new_format">Add your expenses</a>
+</div><br>
+
+</div>
+
+<h2>How to check your expenses?</h2>
+
+<div class="users-form">Select from date
+<form method="get" action="/users">
+  <div><input type="date" name="select_date" id="select-date"></diV>
+
+  <br><div><input type="submit" value="Select" id="date-submit"></diV>
+</form><br>
+</div>
+
+<div class="users-form">Select from month
+<form method="get" action="/users">
+  <div><input type="month" name="select_month" id="select-month"></diV>
+
+  <br><div><input type="submit" value="Select" id="month-submit"></diV>
+</form><br>
+</div>
+
+<div class="users-form">Select from year
+<form method="get" action="/users">
+  <div>
+    <select name="select_year" id="select-year">
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015" selected>2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+    </select>
+  </diV>
+
+
+  <br><div><input type="submit" value="Select" id="year-submit"></diV>
+</form>
+</div>
+
+<a href="/users"><button type="button" id="users-clear">Home</button></a>
+
+<a href="/logout"><button type="button" id="users-logout">Logout</button></a>

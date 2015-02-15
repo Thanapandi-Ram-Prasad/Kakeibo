@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#index-title {
+  position: relative;
+  top: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+#index-frame {
+  /*border: solid 1px;*/
+  width: 640px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 160px;
+}
+
+#index_msg {
+  margin-bottom: 50px;
+}
+
+#you {
+  color: #303F9F;
+}
+
+#can {
+  color: #d50000;
+}
+
+#record {
+  color: #FFFF00;
+}
+
+#your {
+  color: #303F9F;
+}
+
+#expenses {
+  color: #1B5E20;
+}
+
+#easily {
+  color: #d50000;
+}
+
+.index_btn {
+  width: 160px;
+  height: 32px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #000;;
+  float: left;
+  margin: 0px 80px 0px 80px;
+}

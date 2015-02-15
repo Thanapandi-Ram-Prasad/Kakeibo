@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#date-title {
+  position: relative;
+  top: 30px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+#date-msg {
+  margin-top: 50px;
+}
+
+.date-table {
+  margin: 0 auto;
+}
+
+#date-home {
+  position: absolute;
+  top:10px;
+  right: 60px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}
+
+#date-logout {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}
+
+#all-table {
+  /*border: solid 1px;*/
+  width: 1200px;
+}
+
+#date-list-table {
+  /*border: solid 1px;*/
+  width: 800px;
+  float: left;
+}
+
+#date-cotegory-table {
+  /*border: solid 1px;*/
+  width: 320px;
+  float: left;
+  margin-left: 20px;
+}
+
+.edit-list {
+  background-color: #00C853;
+  font-weight: bold;
+}
+
+.delete-list {
+  background-color: #d50000;
+  font-weight: bold;
+}

@@ -1,0 +1,27 @@
+<div id="sign-title">Mycash</div>
+
+<div id="sign-frame">
+<h1>Make your account</h1>
+
+<form id="users-form" method="post" action="/sign_up">
+
+  <div id="name-label">
+    <label>
+      <div id="sign-nm">User Name</div> <div><input id="sign-name" type="text" name="user_name" minlength="5" required> <span class="alrt">5文字以上で設定してください！</span></div>
+    </label>
+  </div>
+
+  <div id="pass-label">
+    <label>
+      <div id="sign-pass">User Password</div> <div><input id="sign-password" type="password" name="user_password" minlength="8" required> <span class="alrt">8文字以上で設定してください！</span></div>
+    </label>
+  </div>
+
+  <br><div><input id="sign-submit" type="submit" value="Send"></div>
+
+</form>
+
+<div><%= @error_msg %></div>
+
+<a href="/"><button type="button" id="rink-index">Return to first screen</button></a>
+</div>

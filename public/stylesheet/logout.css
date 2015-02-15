@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#logout-title {
+  position: relative;
+  top: 30px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+#logout-msg {
+  margin-top: 50px;
+}
+
+#rink-index {
+  height: 30px;
+  background-color: #2196F3;
+  font-weight: bold;
+}

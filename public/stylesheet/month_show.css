@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#month-title {
+  position: relative;
+  top: 30px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+#month-msg {
+  margin-top: 50px;
+}
+
+.month-box {
+  /*border: solid 1px;*/
+  width: 240px;
+  float: left;
+  margin: 10px 110px 0px 110px;
+}
+
+#month-left-box {
+  padding: 5px 0px 5px 0px;
+}
+
+#month-right-box {
+  position: relative;
+  left: 88px;
+}
+
+.month-list {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.month-table {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#month-home {
+  clear: both;
+  position: absolute;
+  top:10px;
+  right: 60px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}
+
+#month-logout {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}

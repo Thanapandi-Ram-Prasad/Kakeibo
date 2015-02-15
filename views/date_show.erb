@@ -1,0 +1,54 @@
+<div id="date-title">Mycash</div>
+<h1 id="date-msg"><%= @select_date %></h1>
+
+<div id="all-table">
+<div id="date-list-table">
+<table border="3" width="800" cellspacing="0" class="date-table">
+  <tr id="list-parent">
+    <th width="160" align="center">Title</th>
+    <th width="160" align="center">Price(¥)</th>
+    <th width="160" align="center">Category</th>
+    <th width="160" align="center">Edit</th>
+    <th width="160" align="center">Delete</th>
+  </tr>
+  <% @lists.each do |list| %>
+      <tr height="40">
+        <th align="center"><%= list.title %></th>
+        <th align="center"><%= list.price %></th>
+        <th align="center"><%= list.category.name %></th>
+        <th align="center"><a href="/<%= list.id %>/edit_format"><button class="edit-list">Edit</button></a></th>
+        <th align="center"><a class="delete" href="/<%= list.spent_date %>/<%= list.id %>/delete"><button class="delete-list">Delete</button></a></th>
+      </tr>
+  <% end %>
+</table>
+<br>
+</div>
+
+<div id="date-cotegory-table">
+<% @categories.zip(@categories_sum).each do |category, (key,val)| %>
+  <table border="3" width="240" cellspacing="0" class="date-table">
+    <tr>
+      <th colspan="2" align="center"><%= category.category.name %></th>
+    </tr>
+    <tr height="40">
+      <th align="center" width="120">Total(¥)</th>
+      <th align="center" width="120"><%= val %></th>
+    </tr>
+  </table><br>
+<% end %>
+
+<table border="3" width="240" cellspacing="0" class="date-table">
+  <tr>
+    <th colspan="2" align="center">ALL</th>
+  </tr>
+  <tr height="40">
+    <th align="center" width="120">Total(¥)</th>
+    <th align="center" width="120"><%= @sum %></th>
+  </tr>
+</table>
+</div>
+</div>
+
+<a href="/users"><button type="button" id="date-home">Home</button></a>
+
+<a href="/logout"><button type="button" id="date-logout">Logout</button></a>

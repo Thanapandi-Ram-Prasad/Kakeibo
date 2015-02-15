@@ -1,0 +1,45 @@
+<div id="year-title">Mycash</div>
+<h1 id="year-msg"><%= @select_year %></h1>
+
+  <div class="year-box" id="left-box">
+    <div class="year-list"><a href="/month/<%= @select_year %>-01">January</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-02">February</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-03">March</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-04">April</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-05">May</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-06">June</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-07">July</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-08">August</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-09">September</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-10">October</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-11">November</a></div>
+    <div class="year-list"><a href="/month/<%= @select_year %>-12">December</a></div>
+  </div>
+
+<div class="year-box" id="right-box">
+<% @categories.zip(@categories_sum).each do |category, (key,val)| %>
+  <table border="3" width="240" cellspacing="0" class="year-table">
+    <tr>
+      <th colspan="2" align="center"><a href="/category_year/<%= category.category.id %>/<%= @select_year %>"><%= category.category.name %></a></th>
+    </tr>
+    <tr height="30">
+      <th align="center" width="120">Total(¥)</th>
+      <th align="center" width="120"><%= val %></th>
+    </tr>
+  </table><br>
+<% end %>
+
+<table border="3" width="240" cellspacing="0" class="year-table">
+  <tr>
+    <th colspan="2" align="center">ALL</th>
+  </tr>
+  <tr height="30">
+    <th align="center" width="120">Total(¥)</th>
+    <th align="center" width="120"><%= @sum %></th>
+  </tr>
+</table>
+</div>
+
+<a href="/users"><button type="button" id="year-home">Home</button></a>
+
+<a href="/logout"><button type="button" id="year-logout">Logout</button></a>

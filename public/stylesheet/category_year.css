@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  /*border: solid 1px;*/
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#category-year-title {
+  position: relative;
+  top: 30px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FF3D00;
+}
+
+.category-year-msg {
+  margin-top: 30px;
+}
+
+#category-year-table {
+  margin: 0 auto;
+}
+
+#category-year-home {
+  clear: both;
+  position: absolute;
+  top:10px;
+  right: 60px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}
+
+#category-year-logout {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  height: 30px;
+  color: #000;
+  font-weight: bold;
+  background-color: #3F51B5;
+}

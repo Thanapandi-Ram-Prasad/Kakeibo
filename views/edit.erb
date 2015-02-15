@@ -1,0 +1,45 @@
+<div id="edit-title">Mycash</div>
+<div id="edit-frame">
+<h1 id="edit-msg">You can edit your expense</h1>
+
+<form id="edit-form" method="post"  action="/edit/<%= @list.id %>">
+
+  <div class="fill-label">
+    <label>
+      <div class="fill">Title</div><div><input id="text" type="text" name="title" value="<%= @list.title %>" ></div>
+    </label>
+  </div>
+
+  <div class="fill-label">
+    <label>
+      <div class="fill">Price</div><div><input id="number" type="number" name="price" value="<%= @list.price %>"></diV>
+    </label>
+  </div>
+
+  <div class="fill-label">
+    <label>
+      <div class="fill">Date</div><div><input id="date" type="date" name="spent_date" value="<%= @list.spent_date %>"></diV>
+    </label>
+  </div>
+
+  <div class="fill-label">
+    <div class="fill">Category</div>
+    <label id="category">
+      <select name="category" class="select-category" id="category-list">
+      <% @lists.each do |list| %>
+        <option value="<%= list.category.name %>"><%= list.category.name %></option>
+      <% end %>
+      </select>
+
+      <div id="button-parent"><button type="button" id="button">Make new category</button></div>
+    </label>
+  </div>
+
+  <br><div><input id="submit" type="submit" value="Send"></div>
+
+</form>
+
+<a href="/users"><button type="button" id="edit-home">Home</button></a>
+</div>
+
+<a href="/logout"><button type="button" id="edit-logout">Logout</button></a>

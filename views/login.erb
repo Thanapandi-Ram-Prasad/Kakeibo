@@ -1,0 +1,28 @@
+<div id="login-title">Mycash</div>
+
+<div id="login-frame">
+<h1>You can login from here</h1>
+
+<form id="users-form" method="get" action="/login">
+
+  <div id="name-label">
+    <label>
+      <div id="user-nm">User Name</div> <div><input id="user-name" type="text" name="user_name" minlength="5" required></div>
+    </label>
+  </div>
+
+  <div id="pass-label">
+    <label>
+      <div id="user-pass">User Password</div> <div><input id="user-password" type="password" name="user_password" minlength="8" required></div>
+    </label>
+  </div>
+
+  <br><div><input id="user-submit" type="submit" value="Send"></div>
+
+</form>
+
+<div><%= @msg %></div>
+<div><%= @miss_msg %></div>
+
+<a href="/"><button type="button" id="rink-index">Return to first screen</button></a>
+</div>

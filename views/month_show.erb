@@ -1,0 +1,40 @@
+<div id="month-title">Mycash</div>
+<h1 id="month-msg"><%= @select_month %></h1>
+
+  <div class="month-box" id="month-left-box">
+  <% @group_lists.each do |group_list| %>
+    <div class="month-list"><a href="/date/<%= group_list.spent_date %>"><%= group_list.spent_date %></a></div>
+  <% end %>
+  </div>
+
+<div class="month-box" id="month-right-box">
+<% @categories.zip(@categories_sum).each do |category, (key,val)| %>
+  <table border="3" width="240" cellspacing="0" class="month-table">
+    <tr>
+      <th colspan="2" align="center"><a href="/category_month/<%= category.category.id %>/<%= @select_month %>"><%= category.category.name %></a></th>
+    </tr>
+    <tr height="30">
+      <th align="center" width="120">Total(¥)</th>
+      <th align="center" width="120"><%= val %></th>
+    </tr>
+    <tr>
+    </tr>
+  </table><br>
+<% end %>
+
+<table border="3" width="240" cellspacing="0" class="month-table">
+  <tr>
+    <th colspan="2" align="center">ALL</th>
+  </tr>
+  <tr height="30">
+    <th align="center" width="120">Total(¥)</th>
+    <th align="center" width="120"><%= @sum %></th>
+  </tr>
+  <tr>
+  </tr>
+</table>
+</div>
+
+<a href="/users"><button type="button" id="month-home">Home</button></a>
+
+<a href="/logout"><button type="button" id="month-logout">Logout</button></a>
