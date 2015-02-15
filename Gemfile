@@ -12,5 +12,4 @@ end
 
 group :production do
   gem 'pg', groups: %w(production), require:
-  gem "foreman"
 end
