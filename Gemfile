@@ -1,5 +1,4 @@
-source :rubygems
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'heroku'
@@ -13,4 +12,5 @@ end
 
 group :production do
   gem 'pg', groups: %w(production), require: false
+  gem "activerecord-postgresql-adapter"
 end

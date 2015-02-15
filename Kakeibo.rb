@@ -3,10 +3,13 @@ require 'sinatra/reloader'
 require 'active_record'
 
 
-ActiveRecord::Base.establish_connection(
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||
   "adapter" => "sqlite3",
   "database" => "./Kakeibo.db"
 )
+
+
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgresql://username:password@localhost:5432/databasename')
 
 
 class User < ActiveRecord::Base
@@ -59,7 +62,7 @@ get '/login' do
     session[:user_id] = User.find_by( {:user_name => params[:user_name], :user_password => params[:user_password]} ).id
     redirect "/users"
   else
-    
+
   end
 
   erb :login
