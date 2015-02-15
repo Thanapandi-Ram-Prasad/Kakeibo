@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
+require './models/sensor.rb'
 
 
 class User < ActiveRecord::Base
