@@ -5,7 +5,7 @@ class CreateLists < ActiveRecord::Migration
       t.integer :user_id
       t.text :title
       t.integer :price
-      t.integer :spent_date
+      t.text :spent_date
     end
   end
 end
