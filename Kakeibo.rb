@@ -10,7 +10,7 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||
 )
 
 
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgresql://username:password@localhost:5433/databasename')
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgresql://localhost/development.sqlite3')
 
 
 class User < ActiveRecord::Base
