@@ -11,6 +11,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg', groups: %w(production), require: false
-  gem "activerecord-postgresql-adapter"
+  gem 'pg', groups: %w(production), require:
+  gem "foreman"
 end
