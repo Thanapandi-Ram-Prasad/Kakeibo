@@ -11,5 +11,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg', groups: %w(production), require:
+  gem 'pg', groups: %w(production), require: false
 end
