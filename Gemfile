@@ -8,9 +8,9 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem "rake"
 
 group :development do
-  gem 'sqlite3'
+  gem 'sqlite3', groups: %w(test development), require: false
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', groups: %w(production), require: false
 end
