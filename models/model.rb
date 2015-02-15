@@ -3,4 +3,4 @@
 #  "database" => "development.sqlite3"
 #)
 
-ActiveRecord::Base.establish_connection('sqlite3:///model.db')
+ActiveRecord::Base.establish_connection('sqlite3:./Kakeibo.db')

@@ -1,6 +1,6 @@
 class CreateLists < ActiveRecord::Migration
   def up
-    create_table :users do |t|
+    create_table :lists do |t|
       t.integer :category_id
       t.integer :user_id
       t.text :title
