@@ -1,6 +1,7 @@
 require 'sinatra'
-require 'sinatra/reloader' if development ?
-#require './models/model.rb'
+require "sinatra/reloader" if development?
+require 'active_record'
+require './models/model.rb'
 
 
 class User < ActiveRecord::Base
