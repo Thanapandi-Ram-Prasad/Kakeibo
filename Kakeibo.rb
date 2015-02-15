@@ -3,16 +3,6 @@ require 'sinatra/reloader'
 require 'active_record'
 
 
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||
-  "adapter" => "sqlite3",
-  #"database" => "./Kakeibo.db"
-  "database" => "development.sqlite3"
-)
-
-
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgresql://localhost/development.sqlite3')
-
-
 class User < ActiveRecord::Base
   has_many :lists
   validates :user_name, :user_password, presence: true

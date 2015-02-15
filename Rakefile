@@ -1,4 +1,4 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
-require './Kakeibo'
+require './models/model.rb'

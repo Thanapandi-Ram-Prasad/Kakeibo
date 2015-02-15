@@ -7,7 +7,6 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem "rake"
 
 group :development do
-  gem 'rake'
   gem 'sqlite3', groups: %w(test development), require: false
 end
 
