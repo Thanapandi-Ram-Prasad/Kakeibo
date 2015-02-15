@@ -5,7 +5,8 @@ require 'active_record'
 
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||
   "adapter" => "sqlite3",
-  "database" => "./Kakeibo.db"
+  #"database" => "./Kakeibo.db"
+  "database" => "development.sqlite3"
 )
 
 
