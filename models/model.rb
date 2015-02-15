@@ -2,6 +2,6 @@
 #  "adapter" => "sqlite3",
 #  "database" => "development.sqlite3"
 #)
-require 'active_record'
+require 'activerecord'
 
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||'sqlite3:./Kakeibo.db')
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'sqlite3:./Kakeibo.db')

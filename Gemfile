@@ -5,7 +5,6 @@ gem 'heroku'
 gem 'activerecord'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem "rake"
-gem "activerecord-postgresql-adapter"
 
 group :development do
   gem 'sqlite3', groups: %w(test development), require: false
@@ -13,4 +12,5 @@ end
 
 group :production do
   gem 'pg', groups: %w(production), require: false
+  gem "activerecord-postgresql-adapter"
 end
