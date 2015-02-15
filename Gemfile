@@ -1,4 +1,4 @@
-source: "https://rubygems.org"
+source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'heroku'
@@ -7,6 +7,7 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem "rake"
 
 group :development do
+  gem 'rake'
   gem 'sqlite3', groups: %w(test development), require: false
 end
 
