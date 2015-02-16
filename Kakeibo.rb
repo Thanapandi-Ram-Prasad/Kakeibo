@@ -130,8 +130,8 @@ get '/date/:select_date' do
   @select_date = params[:select_date]
   @lists = List.where(spent_date: params[:select_date]).where(user_id: user_id)
   @categories = @lists.find_by_sql("SELECT category_id FROM lists group by category_id")
-  @categories_sum = @lists.find_by_sql("SELECT category_id, sum(price) FROM lists group by category_id")
-  @sum = @lists.find_by_sql("SELECT sum(price) FROM lists")
+  @categories_sum = @lists.find_by_sql("SELECT category_id, SUM(price) FROM lists GROUP BY category_id")
+  @sum = @lists.find_by_sql("SELECT SUM(price) FROM lists")
   erb :date_show
 end
 
