@@ -204,7 +204,7 @@ get '/category_month/:id/:month' do
   user_id = session[:user_id]
   @category_month = params[:month]
   @category = Category.find(params[:id])
-  @lists = List.where("category_id LIKE?", "%#{params[:id]}%").where(user_id: user_id).group(:spent_date)
+  @lists = List.where("category_id LIKE?", "%#{params[:id]}%").where(user_id: user_id).select('spent_date').group('spent_date')
   @lists_sum = @lists.sum(:price)
   erb :category_month
 end
