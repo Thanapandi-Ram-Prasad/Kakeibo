@@ -1,6 +1,5 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
-require 'rubygems'
 require './models/model.rb'
 
 
