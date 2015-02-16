@@ -129,7 +129,7 @@ get '/date/:select_date' do
   user_id = User.find(session[:user_id])
   @select_date = params[:select_date]
   @lists = List.where(spent_date: params[:select_date]).where(user_id: user_id)
-  @categories = @lists.group(:category_id)
+  @categories = @lists.find_by_sql("SELECT category_id FROM lists group by category_id")
   @categories_sum = @categories.sum(:price)
   @sum = @lists.sum(:price)
   erb :date_show
