@@ -103,7 +103,7 @@ get '/new_format' do
   end
 
   user_id = session[:user_id]
-  @lists = List.where(user_id: user_id).select(:category).distinct
+  @lists = List.where(user_id: user_id).find_by_sql("SELECT category_id FROM lists group by category_id")
   erb :new
 end
 
