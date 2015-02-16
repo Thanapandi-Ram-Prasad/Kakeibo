@@ -102,8 +102,8 @@ get '/new_format' do
   #redirect '/'
   #end
 
-  user_id = session[:user_id]
-  @lists = List.where(user_id: user_id).group(:category_id)
+  #user_id = session[:user_id]
+  #@lists = List.where(user_id: user_id).group(:category_id)
   erb :new
 end
 
