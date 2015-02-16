@@ -103,7 +103,7 @@ get '/new_format' do
   end
 
   user_id = session[:user_id]
-  @lists = List.where(user_id: user_id).find_by_sql("SELECT category_id FROM lists group by category_id")
+  @lists = List.where(user_id: user_id).group("to_char(category_id)").sum(:length)
   erb :new
 end
 
@@ -130,7 +130,7 @@ get '/date/:select_date' do
   @select_date = params[:select_date]
   @lists = List.where(spent_date: params[:select_date]).where(user_id: user_id)
   @categories = List.where(spent_date: params[:select_date]).where(user_id: user_id).find_by_sql("SELECT category_id FROM lists group by category_id")
-  @categories_sum = List.where(spent_date: params[:select_date]).where(user_id: user_id).sum(:price).find_by_sql("SELECT category_id FROM lists group by category_id")
+  @categories_sum = List.where(spent_date: params[:select_date]).where(user_id: user_id).find_by_sql("SELECT category_id FROM lists group by category_id")
   @sum = List.where(spent_date: params[:select_date]).where(user_id: user_id).sum(:price)
   erb :date_show
 end
