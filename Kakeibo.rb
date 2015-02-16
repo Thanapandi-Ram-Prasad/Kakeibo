@@ -189,7 +189,7 @@ get '/year/:select_year' do
 
   user_id = session[:user_id]
   @select_year = params[:select_year]
-  @categories = List.where("spent_date LIKE?", "%#{params[:select_year]}%").where(user_id: user_id).select('spent_date').group('spent_date')
+  @categories = List.where("spent_date LIKE?", "%#{params[:select_year]}%").where(user_id: user_id).select('category_id').group('category_id')
   @categories_sum = @categories.sum(:price)
   @sum = List.where("spent_date LIKE?", "%#{params[:select_year]}%").where(user_id: user_id).sum(:price)
   erb :year_show
