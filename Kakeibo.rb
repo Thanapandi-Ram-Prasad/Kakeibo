@@ -103,7 +103,7 @@ get '/new_format' do
   end
 
   user_id = session[:user_id]
-  @lists = List.where(user_id: user_id).group("to_integer(category_id)").sum(:price)
+  @lists = List.where(user_id: user_id).group("category_id").sum(:price)
   erb :new
 end
 
