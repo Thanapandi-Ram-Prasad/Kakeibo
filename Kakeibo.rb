@@ -113,7 +113,7 @@ post '/users' do
   list = category.lists.create( {:title => params[:title], :price => params[:price], :spent_date => params[:spent_date], :user_id => user_id.id} )
 
   if list.save!
-    redirect "/users"
+    redirect "/date/#{params[:spent_date]}"
   else
 
   end
