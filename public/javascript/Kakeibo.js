@@ -39,10 +39,10 @@ $(function(){
     $('#category-text').remove();
     $('#return-parent').remove();
     if ( ajax_flag == 1 ){
-      $('#category').load('http://localhost:4567/new_format #category');
+      $('#category').load('https://gentle-sands-9095.herokuapp.com/new_format #category');
     }
    else {
-    $('#category').load('http://localhost:4567/new_format #button-parent');
+    $('#category').load('https://gentle-sands-9095.herokuapp.com/new_format #button-parent');
    }
   });
 });
