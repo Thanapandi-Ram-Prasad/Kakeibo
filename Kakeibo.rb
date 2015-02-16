@@ -98,9 +98,9 @@ end
 
 get '/new_format' do
 
-  #if session[:user_id].nil?
-  #redirect '/'
-  #end
+  if session[:user_id].nil?
+    redirect '/'
+  end
 
   #user_id = session[:user_id]
   #@lists = List.where(user_id: user_id).group(:category_id)
