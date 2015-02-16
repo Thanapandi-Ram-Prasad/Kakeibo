@@ -149,7 +149,7 @@ get '/:id/edit_format' do
 
   @list = List.find(params[:id])
   user_id = session[:user_id]
-  @lists = List.where(user_id: user_id).group(:category_id)
+  @lists = List.where(user_id: user_id).select('category_id').group('category_id')
   erb :edit
 end
 
@@ -174,8 +174,8 @@ get '/month/:select_month' do
   user_id = session[:user_id]
   @select_month = params[:select_month]
   @lists = List.where("spent_date LIKE?", "%#{params[:select_month]}%").where(user_id: user_id)
-  @group_lists = @lists.group(:spent_date)
-  @categories = @lists.group(:category_id)
+  @group_lists = @lists.select('spent_date').group('spent_date')
+  @categories = @lists.select('category_id').group('category_id')
   @categories_sum = @categories.sum(:price)
   @sum = @lists.sum(:price)
   erb :month_show
