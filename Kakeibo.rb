@@ -22,7 +22,7 @@ class List < ActiveRecord::Base
 end
 
 
-use Rack::Session::Cookie
+use Rack::Session::Cookie, secret: "...", key: "Kakeibo_session"
 set :sessions, true
 
 
@@ -99,11 +99,11 @@ end
 get '/new_format' do
 
   if session[:user_id].nil?
-    redirect '/'
+  redirect '/'
   end
 
-  #user_id = session[:user_id]
-  #@lists = List.where(user_id: user_id).group(:category_id)
+  user_id = session[:user_id]
+  @lists = List.where(user_id: user_id).group(:category_id)
   erb :new
 end
 
