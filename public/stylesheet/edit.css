@@ -49,9 +49,11 @@ body {
   clear: both;
   position: absolute;
   top:10px;
-  right: 60px;
-  height: 30px;
-  color: #000;
+  right: 100px;
+  width: 64px;
+  height: 50px;
+  color: #fff;
+  font-size: 14px;
   font-weight: bold;
   background-color: #3F51B5;
 }
@@ -60,8 +62,10 @@ body {
   position: absolute;
   top:10px;
   right: 10px;
-  height: 30px;
-  color: #000;
+  width: 64px;
+  height: 50px;
+  color: #fff;
+  font-size: 14px;
   font-weight: bold;
   background-color: #3F51B5;
 }
