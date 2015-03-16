@@ -29,23 +29,26 @@ body {
   clear: both;
   position: absolute;
   top:10px;
-  right: 100px;
-  width: 64px;
+  right: 120px;
+  width: 80px;
   height: 50px;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
+  text-align: center;
   background-color: #3F51B5;
 }
 
 #category-month-logout {
   position: absolute;
   top:10px;
-  right: 10px;
-  width: 64px;
+  right: 30px;
+  width: 80px;
   height: 50px;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
+  text-align: center;
   background-color: #3F51B5;
+}
 }
