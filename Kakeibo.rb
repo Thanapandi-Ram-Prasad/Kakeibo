@@ -48,15 +48,19 @@ post '/sign_up' do
 end
 
 get '/login' do
+  erb :login
+end
+
+post '/login' do
 
   if User.find_by( {:user_name => params[:user_name], :user_password => params[:user_password]} ) then
     session[:user_id] = User.find_by( {:user_name => params[:user_name], :user_password => params[:user_password]} ).id
     redirect "/users"
   else
-
+    @error_msg = "このアカウントは存在しません！"
+    erb :login
   end
 
-  erb :login
 end
 
 get '/logout' do
