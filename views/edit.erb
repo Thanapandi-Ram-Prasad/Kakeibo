@@ -4,25 +4,25 @@
 
 <form id="edit-form" method="post"  action="/edit/<%= @list.id %>">
 
-  <div class="fill-label">
+  <div class="fill-label" id="fill-title">
     <label>
       <div class="fill">Title</div><div><input id="text" type="text" name="title" value="<%= @list.title %>" ></div>
     </label>
   </div>
 
-  <div class="fill-label">
+  <div class="fill-label" id="fill-pitle">
     <label>
       <div class="fill">Price</div><div><input id="number" type="number" name="price" value="<%= @list.price %>"></diV>
     </label>
   </div>
 
-  <div class="fill-label">
+  <div class="fill-label" id="fill-date">
     <label>
       <div class="fill">Date</div><div><input id="date" type="date" name="spent_date" value="<%= @list.spent_date %>"></diV>
     </label>
   </div>
 
-  <div class="fill-label">
+  <div class="fill-label" id="fill-category">
     <div class="fill">Category</div>
     <label id="category">
       <select name="category" class="select-category" id="category-list">
