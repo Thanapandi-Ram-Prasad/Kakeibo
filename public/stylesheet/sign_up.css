@@ -59,3 +59,11 @@ body {
   font-weight: bold;
   margin-top: 30px;
 }
+
+#remaining-name {
+  color: #FF4081;
+}
+
+#remaining-password {
+  color: #FF4081;
+}

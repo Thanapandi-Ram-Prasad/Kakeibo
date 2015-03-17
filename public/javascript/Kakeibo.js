@@ -4,7 +4,7 @@ var price_flag = 0;
 var date_flag = 0;
 var category_flag = 0;
 
-$(document).ready(function(){
+$function(){
   $('.delete').click(function(){
     if ( confirm('are you sure?') ){
     }
@@ -23,7 +23,7 @@ else if ( $('#category-list').children().length != 0 ){
 }
 
 
-$(document).ready(function(){
+$(function(){
   $(document).on('click', '#submit', function(){
     if ( ($('#text').val() == '') || ($('#number').val() == '') || ($('#date').val() == '') || ($('.select-category').val() == '') ){
       alert('入力が不足しています!');
@@ -125,3 +125,20 @@ if ( $('#month-left-box').children().length == 0 ){
   $('.month-table').css('display', 'none');
   $('#month-msg').after('<div>まだ入力がありません！</div>');
 }
+
+$(function(){
+  $(document).on('click', '#sign-submit', function(){
+    if ( $('#sign-name').val().length <  5 || $('#sign-password').val().length <  8 ){
+
+      if ( $('#sign-name').val().length < 5  ){
+        $('#remaining-name').html(5 - $('#sign-name').val().length + '文字不足!');
+      }
+
+      if ( $('#sign-password').val().length < 8  ){
+        $('#remaining-password').html(8 - $('#sign-password').val().length + '文字不足!');
+      }
+
+      return false;
+    }
+  });
+});
