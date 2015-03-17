@@ -80,3 +80,8 @@ body {
   font-weight: bold;
   color: #FF3D00;
 }
+
+
+#category-list {
+  width: 140px;
+}
