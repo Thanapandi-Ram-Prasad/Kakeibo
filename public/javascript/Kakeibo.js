@@ -4,7 +4,7 @@ var price_flag = 0;
 var date_flag = 0;
 var category_flag = 0;
 
-$function(){
+$(function(){
   $('.delete').click(function(){
     if ( confirm('are you sure?') ){
     }
