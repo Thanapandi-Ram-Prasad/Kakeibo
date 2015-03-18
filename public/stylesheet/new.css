@@ -85,3 +85,7 @@ body {
 #category-list {
   width: 140px;
 }
+
+#number-alert {
+  font-size: 12px;
+}

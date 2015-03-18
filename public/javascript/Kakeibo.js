@@ -36,7 +36,7 @@ $(function(){
         title_flag = 0;
       }
       if ( $('#text').val() == '' && title_flag == 0 ){
-        $('#fill-title').append('<div id="input-title">Input title！</div>');
+        $('#fill-title').append('<div id="input-title">Check title！</div>');
         $('#input-title').css('color', '#d50000');
         title_flag = 1;
       }
@@ -46,7 +46,7 @@ $(function(){
         price_flag = 0;
       }
       if ( $('#number').val() == '' && price_flag == 0  ){
-        $('#fill-price').append('<div id="input-price">Input price！</div>');
+        $('#fill-price').append('<div id="input-price">Check price！</div>');
         $('#input-price').css('color', '#d50000');
         price_flag = 1;
       }
@@ -56,7 +56,7 @@ $(function(){
         date_flag = 0;
       }
       if ( $('#date').val() == '' && date_flag == 0){
-        $('#fill-date').append('<div id="input-date">Input date！</div>');
+        $('#fill-date').append('<div id="input-date">Check date！</div>');
         $('#input-date').css('color', '#d50000');
         date_flag = 1;
       }
@@ -66,7 +66,7 @@ $(function(){
         category_flag = 0;
       }
       if ( $('.select-category').val() == '' && category_flag == 0){
-        $('#fill-category').append('<div id="input-category">Input category！</div>');
+        $('#fill-category').append('<div id="input-category">Check category！</div>');
         $('#input-category').css('color', '#d50000');
         category_flag = 1;
       }
