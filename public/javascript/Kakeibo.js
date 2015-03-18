@@ -138,10 +138,16 @@ if ( $('#month-left-box').children().length == 0 ){
   $('#month-msg').after('<div>まだ入力がありません！</div>');
 }
 
+if ( $('#right-box').children().length == 2 ){
+  $('#left-box').css('display', 'none');
+  $('#right-box').css('display', 'none');
+  $('#year-msg').after('<div>まだ入力がありません！</div>');
+}
+
 
 $(function(){
   $(document).on('click', '#sign-submit', function(){
-    
+
     if ( $('#sign-name').val().length <  5 || $('#sign-password').val().length <  8 ){
 
       if ( $('#sign-name').val().length < 5  ){
