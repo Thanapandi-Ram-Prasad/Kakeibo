@@ -4,6 +4,7 @@ var price_flag = 0;
 var date_flag = 0;
 var category_flag = 0;
 
+
 $(function(){
   $('.delete').click(function(){
     if ( confirm('are you sure?') ){
@@ -13,6 +14,7 @@ $(function(){
     }
   });
 });
+
 
 if ( $('#category-list').children().length == 0 ){
   $('#category-list').css('display', 'none');
@@ -25,6 +27,7 @@ else if ( $('#category-list').children().length != 0 ){
 
 $(function(){
   $(document).on('click', '#submit', function(){
+
     if ( ($('#text').val() == '') || ($('#number').val() == '') || ($('#date').val() == '') || ($('.select-category').val() == '') ){
       alert('入力が不足しています!');
 
@@ -74,6 +77,7 @@ $(function(){
   });
 });
 
+
 $(function(){
   $(document).on('click', '#button', function(){
     $('#category-list').remove();
@@ -84,6 +88,7 @@ $(function(){
   $(document).on('click', '#return', function(){
     $('#category-text').remove();
     $('#return-parent').remove();
+
     if ( ajax_flag == 1 ){
       $('#category').load('https://gentle-sands-9095.herokuapp.com/new_format #category', function(){
         $('#input-category').remove();
@@ -96,24 +101,31 @@ $(function(){
       category_flag = 0;
     });
    }
+
   });
 });
 
+
 $(function(){
   $('#date-submit').click(function(){
+
     if ( $('#select-date').val() == '' ){
       alert('日付を入力してくだい！');
       return false;
     }
+
   });
 
   $('#month-submit').click(function(){
+
     if ( $('#select-month').val() == '' ){
       alert('月を入力してください！');
       return false;
     }
+
   });
 });
+
 
 if ( $('#list-parent').next().length == 0 ){
   $('#date-list-table').css('display', 'none');
@@ -126,16 +138,24 @@ if ( $('#month-left-box').children().length == 0 ){
   $('#month-msg').after('<div>まだ入力がありません！</div>');
 }
 
+
 $(function(){
   $(document).on('click', '#sign-submit', function(){
+    
     if ( $('#sign-name').val().length <  5 || $('#sign-password').val().length <  8 ){
 
       if ( $('#sign-name').val().length < 5  ){
         $('#remaining-name').html(5 - $('#sign-name').val().length + '文字不足!');
       }
+      else {
+        $('#remaining-name').html('');
+      }
 
       if ( $('#sign-password').val().length < 8  ){
         $('#remaining-password').html(8 - $('#sign-password').val().length + '文字不足!');
+      }
+      else {
+        $('#remaining-password').html('');
       }
 
       return false;
