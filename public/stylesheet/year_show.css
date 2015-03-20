@@ -74,3 +74,10 @@ body {
   text-align: center;
   background-color: #3F51B5;
 }
+
+.round {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E91E63;/* 円の色 */
+}

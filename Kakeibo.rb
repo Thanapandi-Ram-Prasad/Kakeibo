@@ -1,7 +1,13 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
 require './models/model.rb'
+require "json"
 
+
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
 
 class User < ActiveRecord::Base
   has_many :lists
@@ -235,4 +241,87 @@ get '/category_year/:id/:year' do
   @sum_november = List.where(category_id: params[:id]).where("spent_date LIKE?", "%#{params[:year]}-11%").where(user_id: user_id).sum(:price)
   @sum_december = List.where(category_id: params[:id]).where("spent_date LIKE?", "%#{params[:year]}-12%").where(user_id: user_id).sum(:price)
   erb :category_year
+end
+
+get '/json/:year' do
+
+  user_id = User.find(session[:user_id])
+
+  @jan_datas = List.where("spent_date LIKE?", "%#{params[:year]}-01%").where(user_id: user_id)
+  @feb_datas = List.where("spent_date LIKE?", "%#{params[:year]}-02%").where(user_id: user_id)
+  @mar_datas = List.where("spent_date LIKE?", "%#{params[:year]}-03%").where(user_id: user_id)
+  @apr_datas = List.where("spent_date LIKE?", "%#{params[:year]}-04%").where(user_id: user_id)
+  @may_datas = List.where("spent_date LIKE?", "%#{params[:year]}-05%").where(user_id: user_id)
+  @jun_datas = List.where("spent_date LIKE?", "%#{params[:year]}-06%").where(user_id: user_id)
+  @jul_datas = List.where("spent_date LIKE?", "%#{params[:year]}-07%").where(user_id: user_id)
+  @aug_datas = List.where("spent_date LIKE?", "%#{params[:year]}-08%").where(user_id: user_id)
+  @sep_datas = List.where("spent_date LIKE?", "%#{params[:year]}-09%").where(user_id: user_id)
+  @oct_datas = List.where("spent_date LIKE?", "%#{params[:year]}-10%").where(user_id: user_id)
+  @nov_datas = List.where("spent_date LIKE?", "%#{params[:year]}-11%").where(user_id: user_id)
+  @dec_datas = List.where("spent_date LIKE?", "%#{params[:year]}-12%").where(user_id: user_id)
+
+  jan_datas = Array.new()
+  @jan_datas.each do |jan_data|
+    jan_datas.push({id: jan_data.id})
+  end
+
+  feb_datas = Array.new()
+  @feb_datas.each do |feb_data|
+    feb_datas.push({id: feb_data.id})
+  end
+
+  mar_datas = Array.new()
+  @mar_datas.each do |mar_data|
+    mar_datas.push({id: mar_data.id})
+  end
+
+  apr_datas = Array.new()
+  @apr_datas.each do |apr_data|
+    apr_datas.push({id: apr_data.id})
+  end
+
+  may_datas = Array.new()
+  @may_datas.each do |may_data|
+    may_datas.push({id: may_data.id})
+  end
+
+  jun_datas = Array.new()
+  @jun_datas.each do |jun_data|
+    jun_datas.push({id: jun_data.id})
+  end
+
+  jul_datas = Array.new()
+  @jul_datas.each do |jul_data|
+    jul_datas.push({id: jul_data.id})
+  end
+
+  aug_datas = Array.new()
+  @aug_datas.each do |aug_data|
+    aug_datas.push({id: aug_data.id})
+  end
+
+  sep_datas = Array.new()
+  @sep_datas.each do |sep_data|
+    sep_datas.push({id: sep_data.id})
+  end
+
+  oct_datas = Array.new()
+  @oct_datas.each do |oct_data|
+    oct_datas.push({id: oct_data.id})
+  end
+
+  nov_datas = Array.new()
+  @nov_datas.each do |nov_data|
+    nov_datas.push({id: nov_data.id})
+  end
+
+  dec_datas = Array.new()
+  @dec_datas.each do |dec_data|
+    dec_datas.push({id: dec_data.id})
+  end
+
+  content_type :json, :charset => 'utf-8'
+  puts data = {jan_datas: jan_datas, feb_datas: feb_datas, mar_datas: mar_datas, apr_datas: apr_datas, may_datas: may_datas, jun_datas: jun_datas, jul_datas: jul_datas, aug_datas: aug_datas, sep_datas: sep_datas, oct_datas: oct_datas, nov_datas: nov_datas, dec_datas: dec_datas}
+  data.to_json
+
 end
