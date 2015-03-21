@@ -171,46 +171,49 @@ $(function(){
 
 
 $(function(){
+
+  $('.round').css('display', 'none');
+
   $.ajax({
   type: 'GET',
   url: 'https://gentle-sands-9095.herokuapp.com/json/' + $('#year-msg').text(),
   dataType: 'json',
   success: function(data){
-    if( data.jan_datas.length == 0) {
-      $('#jan-check').css('display', 'none');
+    if( data.jan_datas.length != 0) {
+      $('#jan-check').css('display', 'inline');
     }
-    if( data.feb_datas.length == 0) {
-      $('#feb-check').css('display', 'none');
+    if( data.feb_datas.length != 0) {
+      $('#feb-check').css('display', 'inline');
     }
-    if( data.mar_datas.length == 0) {
-      $('#mar-check').css('display', 'none');
+    if( data.mar_datas.length != 0) {
+      $('#mar-check').css('display', 'inline');
     }
-    if( data.apr_datas.length == 0) {
-      $('#apr-check').css('display', 'none');
+    if( data.apr_datas.length != 0) {
+      $('#apr-check').css('display', 'inline');
     }
-    if( data.may_datas.length == 0) {
-      $('#may-check').css('display', 'none');
+    if( data.may_datas.length != 0) {
+      $('#may-check').css('display', 'inline');
     }
-    if( data.jun_datas.length == 0) {
-      $('#jun-check').css('display', 'none');
+    if( data.jun_datas.length != 0) {
+      $('#jun-check').css('display', 'inline');
     }
-    if( data.jul_datas.length == 0) {
-      $('#jul-check').css('display', 'none');
+    if( data.jul_datas.length != 0) {
+      $('#jul-check').css('display', 'inline');
     }
-    if( data.aug_datas.length == 0) {
-      $('#aug-check').css('display', 'none');
+    if( data.aug_datas.length != 0) {
+      $('#aug-check').css('display', 'inline');
     }
-    if( data.sep_datas.length == 0) {
-      $('#sep-check').css('display', 'none');
+    if( data.sep_datas.length != 0) {
+      $('#sep-check').css('display', 'inline');
     }
-    if( data.oct_datas.length == 0) {
-      $('#oct-check').css('display', 'none');
+    if( data.oct_datas.length != 0) {
+      $('#oct-check').css('display', 'inline');
     }
-    if( data.nov_datas.length == 0) {
-      $('#nov-check').css('display', 'none');
+    if( data.nov_datas.length != 0) {
+      $('#nov-check').css('display', 'inline');
     }
-    if( data.dec_datas.length == 0) {
-      $('#dec-check').css('display', 'none');
+    if( data.dec_datas.length != 0) {
+      $('#dec-check').css('display', 'inline');
     }
   },
   error: function() {
