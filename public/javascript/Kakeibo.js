@@ -28,7 +28,7 @@ else if ( $('#category-list').children().length != 0 ){
 $(function(){
   $(document).on('click', '#submit', function(){
 
-    if ( ($('#text').val() == '') || ($('#number').val() == '') || ($('#date').val() == '') || ($('.select-category').val() == '') ){
+    if ( ($('#text').val() == '') || ($('#number').val() == '') || ($('#date').val().length != 10) || ($('.select-category').val() == '') ){
       alert('入力が不足しています!');
 
       if ( $('#text').val() != '' && title_flag == 1 ){
@@ -51,11 +51,12 @@ $(function(){
         price_flag = 1;
       }
 
-      if ( $('#date').val() != '' && date_flag == 1 ){
+      if ( $('#date').val().length == 10 && date_flag == 1 ){
+        console.log($('#date').val().length);
         $('#input-date').remove();
         date_flag = 0;
       }
-      if ( $('#date').val() == '' && date_flag == 0){
+      if ( $('#date').val().length != 10 && date_flag == 0){
         $('#fill-date').append('<div id="input-date">Check date！</div>');
         $('#input-date').css('color', '#d50000');
         date_flag = 1;
@@ -109,7 +110,7 @@ $(function(){
 $(function(){
   $('#date-submit').click(function(){
 
-    if ( $('#select-date').val() == '' ){
+    if ( $('#select-date').val().length != 10 ){
       alert('日付を入力してくだい！');
       return false;
     }
@@ -118,7 +119,7 @@ $(function(){
 
   $('#month-submit').click(function(){
 
-    if ( $('#select-month').val() == '' ){
+    if ( $('#select-month').val().length != 7 ){
       alert('月を入力してください！');
       return false;
     }
@@ -172,8 +173,6 @@ $(function(){
 
 $(function(){
 
-  $('.round').css('display', 'none');
-
   $.ajax({
   type: 'GET',
   url: 'https://gentle-sands-9095.herokuapp.com/json/' + $('#year-msg').text(),
@@ -219,5 +218,44 @@ $(function(){
   error: function() {
     console.log('miss');
   }
+});
+});
+
+
+$(function(){
+  var dateFormat = 'yy-mm-dd';
+  $('#select-date').datepicker({
+    numberOfMonths: 1,
+    showButtonPanel: true,
+    changeYear: true,
+    changeMonth: true,
+    dateFormat: dateFormat,
+    showAnim: "drop"
+});
+});
+
+
+$(function(){
+  var dateFormat = 'yy-mm';
+  $('#select-month').datepicker({
+    numberOfMonths: 1,
+    showButtonPanel: true,
+    changeYear: true,
+    changeMonth: true,
+    dateFormat: dateFormat,
+    showAnim: "drop"
+});
+});
+
+
+$(function(){
+  var dateFormat = 'yy-mm-dd';
+  $('#date').datepicker({
+    numberOfMonths: 1,
+    showButtonPanel: true,
+    changeYear: true,
+    changeMonth: true,
+    dateFormat: dateFormat,
+    showAnim: "drop"
 });
 });

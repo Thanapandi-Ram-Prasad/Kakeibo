@@ -80,4 +80,5 @@ body {
   height: 10px;
   border-radius: 50%;
   background-color: #E91E63;/* 円の色 */
+  display: none;
 }
